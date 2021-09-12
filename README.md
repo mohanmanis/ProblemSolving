@@ -8,3 +8,7 @@
 **Sub of Subset**
 
 **Unbounded Knapsack**
+
+**Minimum subset sum difference**
+
+**Count of subsets with Given Difference**
