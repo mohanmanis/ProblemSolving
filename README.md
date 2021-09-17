@@ -12,3 +12,7 @@
 **Minimum subset sum difference**
 
 **Count of subsets with Given Difference**
+
+**Target Sum Problem**
+
+**Rod cutting Problem**
