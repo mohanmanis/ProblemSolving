@@ -17,3 +17,29 @@ Let cutRod(n) be the required (best possible price) value for a rod of length n.
 cutRod(n) = max(price[i] + cutRod(n-i-1)) for all i in {0, 1 .. n-1}
 
 */
+
+const unboundedKnapsack = (W, val, wt) => {
+ // dp[i] is going to store maximum value
+ // with knapsack capacity i.
+ const n = val.length;
+ const dp = new Array(W + 1).fill(0);
+
+ // Fill dp[] using above recursive formula
+ for (let i = 0; i <= W; i++) {
+  for (let j = 0; j < n; j++) {
+   if (wt[j] <= i) {
+    dp[i] = Math.max(dp[i], dp[i - wt[j]] + val[j]);
+   }
+  }
+ }
+ return dp[W];
+
+}
+
+const rodCuttingProblem = (priceArr) => {
+ const lengthOfRod = priceArr.length;
+ const lengthArr = new Array(lengthOfRod).fill(0).map((_, i) => i + 1);
+ return unboundedKnapsack(lengthOfRod, priceArr, lengthArr)
+}
+const priceArr = [1, 5, 8, 9, 10, 17, 17, 20]
+console.log("Maximum value obtainable by cutting up the rod and selling the pieces is ::", rodCuttingProblem(priceArr))

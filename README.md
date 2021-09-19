@@ -16,3 +16,7 @@
 **Target Sum Problem**
 
 **Rod cutting Problem**
+
+**Coin Change Problem1 (total number of ways to get the given change)**
+
+**Coin Change Problem2 (Minimum number of coins to get the given amount)**
