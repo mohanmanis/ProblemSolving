@@ -26,3 +26,5 @@
 **Longest common Substring**
 
 **Print Longest common Subsequence**
+
+**Shortest Common Supersequence**
