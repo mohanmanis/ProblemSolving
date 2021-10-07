@@ -22,3 +22,7 @@
 **Coin Change Problem2 (Minimum number of coins to get the given amount)**
 
 **Longest common Subsequence**
+
+**Longest common Substring**
+
+**Print Longest common Subsequence**
