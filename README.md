@@ -32,3 +32,5 @@
 **Minimum number of indertion and deletion to convert a string to b**
 
 **Longest Palindromic Subsequence**
+
+**Minimum number of deletions to make a string palindrome**
