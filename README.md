@@ -28,3 +28,5 @@
 **Print Longest common Subsequence**
 
 **Shortest Common Supersequence**
+
+**Minimum number of indertion and deletion to convert a string to b**
