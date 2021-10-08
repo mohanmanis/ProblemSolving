@@ -38,3 +38,7 @@
 **Longest repeating subsequence**
 
 **Print Longest repeating subsequence**
+
+**Find if a string is subsequence of string b(sequence-pattern-matching)**
+
+**Minimum Number if insertion to make a string a palindrome**
