@@ -15,7 +15,7 @@ LCS for input Sequences "AGGTAB" and "GXTXAYB" is "GTAB" of length 4.
 const printLongestCommonSubsequence = (text1, text2) => {
  const m = text1.length;
  const n = text2.length;
- let result = "";
+ let result = [];
  const dp = [...Array(m + 1)].map(() => Array(n + 1).fill(0));
  for (let i = 1; i < m + 1; i++) {
   for (let j = 1; j < n + 1; j++) {
@@ -27,15 +27,14 @@ const printLongestCommonSubsequence = (text1, text2) => {
   let i = m, j = n;
  while (i > 0 && j > 0) {    // if any of this i and j becomes 0 means one string is empty 
   if (text1[i - 1] == text2[j - 1]) {
-   result += text1[i - 1];    //if character matches then add that to result string and move diagonally up
+   result.unshift(text1[i - 1]);    //if character matches then add that to result string and move diagonally up
    i--; j--;
-  }
-  else {
+  } else {
    if (dp[i][j - 1] > dp[i - 1][j]) j--;    // else find the max of up and right position of dp table and move accordingly to up or left
    else i--;
   }
  }
- return result.split("").reverse().join(""); // reverse the string as we started from last
+ return result.join(""); // reverse the string as we started from last
 
 };
 

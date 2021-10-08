@@ -34,3 +34,7 @@
 **Longest Palindromic Subsequence**
 
 **Minimum number of deletions to make a string palindrome**
+
+**Longest repeating subsequence**
+
+**Print Longest repeating subsequence**

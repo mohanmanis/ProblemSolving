@@ -29,4 +29,4 @@ const longestCommonSubsequence = (text1, text2) => {
 
 console.log(`The Longest common subsequence of ABCDGH and AEDFHR ${longestCommonSubsequence("ABCDGH", "AEDFHR")}`);
 
-console.log(`The Longest common subsequence of AGGTAB and GXTXAYB ${longestCommonSubsequence("AGGTAB", "GXTXAYB")}`)
+console.log(`The Longest common subsequence of AGGTAB and GXTXAYB ${longestCommonSubsequence("AGGTAB", "GXTXAYB")}`);
