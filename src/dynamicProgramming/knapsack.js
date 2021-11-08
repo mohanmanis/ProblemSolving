@@ -111,9 +111,9 @@ const knapSack3 = (W, wt, val) => {
   for (let i = 1; i < n + 1; i++) {
     for (let j = 1; j < W + 1; j++) {
       if (wt[i] <= j) {
-        dp[i][j] = Math.max(val[i] + dp[i][j - wt[i]], dp[i][j])
+        dp[i][j] = Math.max(val[i] + dp[i][j - wt[i]], dp[i][j]);
       } else {
-        dp[i][j] = dp[i - 1][j]
+        dp[i][j] = dp[i - 1][j];
       }
     }
   }

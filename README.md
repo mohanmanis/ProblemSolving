@@ -1,44 +1,60 @@
 # Problem Solving Questions
-**0-1 Knapsack**
 
-**Equal sum Partition**
+## Dynamic programing
+  - **0-1 Knapsack**
 
-**Count of Equal Subset**
+  - **Equal sum Partition**
 
-**Sub of Subset**
+  - **Count of Equal Subset**
 
-**Unbounded Knapsack**
+  - **Sub of Subset**
 
-**Minimum subset sum difference**
+  - **Unbounded Knapsack**
 
-**Count of subsets with Given Difference**
+  - **Minimum subset sum difference**
 
-**Target Sum Problem**
+  - **Count of subsets with Given Difference**
 
-**Rod cutting Problem**
+  - **Target Sum Problem**
 
-**Coin Change Problem1 (total number of ways to get the given change)**
+  - **Rod cutting Problem**
 
-**Coin Change Problem2 (Minimum number of coins to get the given amount)**
+  - **Coin Change Problem1 (total number of ways to get the given change)**
 
-**Longest common Subsequence**
+ - **Coin Change Problem2 (Minimum number of coins to get the given amount)**
 
-**Longest common Substring**
+ - **Longest common Subsequence**
 
-**Print Longest common Subsequence**
+ - **Longest common Substring**
 
-**Shortest Common Supersequence**
+ - **Print Longest common Subsequence**
 
-**Minimum number of indertion and deletion to convert a string to b**
+ - **Shortest Common Supersequence**
 
-**Longest Palindromic Subsequence**
+ - **Minimum number of insertion and deletion to convert a string to b**
 
-**Minimum number of deletions to make a string palindrome**
+ - **Longest Palindromic Subsequence**
 
-**Longest repeating subsequence**
+ - **Minimum number of deletions to make a string palindrome**
 
-**Print Longest repeating subsequence**
+ - **Longest repeating subsequence**
 
-**Find if a string is subsequence of string b(sequence-pattern-matching)**
+ - **Print Longest repeating subsequence**
 
-**Minimum Number if insertion to make a string a palindrome**
+ - **Find if a string is subsequence of string b(sequence-pattern-matching)**
+
+ - **Minimum Number 0f insertion to make a string a palindrome**
+
+ - **Maximum chain multiplication**
+
+ - **Palindrome partitioning**
+
+ - **Scrambled Egg**
+
+ - **Egg dropping**
+
+ - **Diameter of a tree**
+
+ - **Maximum path sum from any node to any node**
+
+ - **Maximum path sum from leaf node to leaf node**
