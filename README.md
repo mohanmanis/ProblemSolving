@@ -49,7 +49,7 @@
 
  - **Palindrome partitioning**
 
- - **Scrambled Egg**
+ - **Scrambled String**
 
  - **Egg dropping**
 
