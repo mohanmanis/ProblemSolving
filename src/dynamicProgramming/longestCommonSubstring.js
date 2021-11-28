@@ -18,27 +18,68 @@ The longest common substring is “abcdez” and is of length 6.
 */
 
 
-const longestCommonString = (text1, text2) => {
- const m = text1.length;
- const n = text2.length;
- // To store length of the longest
- // common substring
- let result = 0;
- const dp = [...Array(m + 1)].map(() => Array(n + 1).fill(0));
- for (let i = 1; i < m + 1; i++) {
-  for (let j = 1; j < n + 1; j++) {
-   if (text1[i - 1] === text2[j - 1]){
-    dp[i][j] = dp[i - 1][j - 1] + 1; // We have a match, increment with the top left.
-    result = Math.max(result, dp[i][j]); // maintain the max around the discontinuity
-   } 
-   else dp[i][j] = 0; // No match, point of discontinuity reached, reset the length to 0 and start looking 
+const longestCommonSubString = (text1, text2) => {
+  const m = text1.length;
+  const n = text2.length;
+  // To store length of the longest
+  // common substring
+  let result = 0;
+  let row = 0, column = 0;
+  const dp = [...Array(m + 1)].map(() => Array(n + 1).fill(0));
+  for (let i = 1; i < m + 1; i++) {
+    for (let j = 1; j < n + 1; j++) {
+      if (text1[i - 1] === text2[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1] + 1; // We have a match, increment with the top left.
+        //result = Math.max(result, dp[i][j]);// maintain the max around the discontinuity
+        if (dp[i][j] > result) {
+          result = dp[i][j]; // maintain the max around the discontinuity
+          row = i;
+          column = j;
+        }
+      }
+      else dp[i][j] = 0; // No match, point of discontinuity reached, reset the length to 0 and start looking 
+    }
   }
- }
- return result; 
+  if (result.length === 0) {
+    // Longest common substring has not been found.
+    return '';
+  }
+  let longestSubstring = '';
+
+  while (dp[row][column] > 0) {
+    longestSubstring = text1[column - 1] + longestSubstring;
+    row--;
+    column--;
+  }
+
+  return [longestSubstring, result];
 
 };
 
 
-console.log(`The Longest common Substring of abcdxyz and xyzabcd ${longestCommonString("abcdxyz", "xyzabcd")}`);
+console.log(`The Longest common Substring of abcdxyz and xyzabcd ${longestCommonSubString("abcdxyz", "xyzabcd")}`);
 
-console.log(`The Longest common Substring of zxabcdezy and yzabcdezx ${longestCommonString("zxabcdezy", "yzabcdezx")}`)
+console.log(`The Longest common Substring of zxabcdezy and yzabcdezx ${longestCommonSubString("zxabcdezy", "yzabcdezx")}`)
+
+
+var findMaximizedCapital = function (k, w, profits, capital) {
+  let maxheap = new MaxPriorityQueue({ priority: v => v[0] });
+  let minheap = new MinPriorityQueue({ priority: v => v[1] });
+  for (let i = 0; i < profits.length; i++) {                  //step 1
+    maxheap.enqueue([profits[i], capital[i]]);
+  }
+  while (k && maxheap.size()) {
+    let [value, limit] = maxheap.dequeue().element;        //step 2
+    if (limit <= w) k--, w += value;
+    else minheap.enqueue([value, limit]);
+    while (minheap.size() && minheap.front().priority <= w) { //step 3
+      let [value, limit] = minheap.dequeue().element;
+      maxheap.enqueue([value, limit]);
+    }
+  }
+  return w;
+};
+
+
+
+
