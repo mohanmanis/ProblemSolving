@@ -43,8 +43,8 @@ The problem can be solved using dynamic programming when the sum of the elements
             dp[i][j] = false;
          } else if (j === 0) {
             dp[i][j] = true;
-         } else if (set[i - 1] <= j) {
-            dp[i][j] = dp[i][j - set[i - 1]] || dp[i][j]
+         } else if (set[i] <= j) {
+            dp[i][j] = dp[i - 1][j - set[i - 1]] || dp[i][j]
          } else {
             dp[i][j] = dp[i - 1][j]
          }
@@ -60,4 +60,6 @@ const isEqualSumPartition = (arr) => {
 
 
 const arr = [3, 1, 5, 9, 12]
+const newArr = [1, 5, 3]
 console.log(isEqualSumPartition(arr))
+console.log(isEqualSumPartition(newArr))

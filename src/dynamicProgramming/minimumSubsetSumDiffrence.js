@@ -33,8 +33,8 @@ const subsetSum = (set, sum) => {
 
 const minSubsetSumDiff = (arr) => {
  const sum = arr.reduce((sum, current) => sum += current, 0);
- const dp = subsetSum(arr, sum)[arr.length - 1]
- let minDiff = Number.POSITIVE_INFINITY
+ const dp = subsetSum(arr, sum)[arr.length]
+ let minDiff = Number.POSITIVE_INFINITY;
  for (let i = 0; i < dp.length; i++) {
   if (dp[i]) {
    minDiff = Math.min(minDiff, sum - 2 * i)

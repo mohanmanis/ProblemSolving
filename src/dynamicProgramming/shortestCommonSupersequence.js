@@ -29,8 +29,8 @@ const longestCommonSubsequence = (text1, text2) => {
 const shortestCommonSuperSequence = (text1, text2) => {
  const m = text1.length;
  const n = text2.length;
-
- return m + n - longestCommonSubsequence(text1, text2);
+ // we have observed that supersequence has LCS present once
+ return m + n - longestCommonSubsequence(text1, text2); // LCS is coming in both of the string so that we can remove one of those occurrence to get this only once
 }
 
 

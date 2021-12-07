@@ -62,7 +62,7 @@ In this method, we avoid the few of the recursive call which is repeated itself 
 
 */
 
-export const isSubsetSum2 = (set, sum) => {
+ const isSubsetSum2 = (set, sum) => {
   const n = set.length;
   const dp = new Array(n + 1).fill(new Array(sum + 1));
   for (let i = 0; i < n + 1; i++) {
@@ -72,7 +72,7 @@ export const isSubsetSum2 = (set, sum) => {
       } else if (j === 0) {
         dp[i][j] = true;
       } else if (set[i - 1] <= j) {
-        dp[i][j] = dp[i][j - set[i - 1]] || dp[i][j]
+        dp[i][j] = dp[i - 1][j - set[i - 1]] || dp[i][j]
       } else {
         dp[i][j] = dp[i - 1][j]
       }

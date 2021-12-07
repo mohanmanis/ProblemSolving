@@ -22,23 +22,19 @@ const findCountOfEqualSubsets = (set, sum) => {
  const n = set.length;
  const dp = new Array(n + 1).fill(new Array(sum + 1));
 
- for (let i = 0; i <= sum; i++) {
-  dp[0][i] = 0;
- }
- for (let i = 0; i < n; i++) {
-  dp[i][0] = 1;
- }
-
- for (let i = 1; i <= n; i++) {
-  for (let j = 1; j <= sum; j++) {
+ for (let i = 0; i < n + 1; i++) {
+  for (let j = 0; j < sum + 1; j++) {
    // let includingCurrentValue = 0;
    // let excludingCurrentValue = 0;
-   if (set[i] <= j) {
-    dp[i][j] = dp[i - 1][j] + dp[i - 1][j - set[i]]
+   if (i === 0 ) dp[i][j] = 0
+   else if (j === 0) dp[i][j] = 1
+   else if (set[i] <= j) {
+    dp[i][j] = dp[i - 1][j] + dp[i - 1][j - set[i - 1]]
    } else {
     dp[i][j] = dp[i - 1][j];
    }
    // excludingCurrentValue = dp[i - 1][j];
+   // includingCurrentValue =  dp[i - 1][j - set[i]];
    // dp[i][j] = includingCurrentValue + excludingCurrentValue
   }
  }
@@ -46,7 +42,7 @@ const findCountOfEqualSubsets = (set, sum) => {
 }
 
 
-const arr = [3, 3, 3, 3];
-const sum = 6;
+const arr = [1, 1, 1, 1];
+const sum = 4;
 
 console.log(findCountOfEqualSubsets(arr, sum))

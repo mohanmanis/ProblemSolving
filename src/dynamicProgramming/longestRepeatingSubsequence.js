@@ -32,6 +32,6 @@ const longestRepeatingSubsequence = (text1) => {
 };
 
 
-console.log(`The length of Longest repeating subsequence of AABEBCDD ${longestRepeatingSubsequence("AABEBCDD")}`);//ABD -> 3
+console.log(`The length of Longest repeating subsequence of AABEBCDD ${longestRepeatingSubsequence("AABEBCDD")}`);//ABD -> 3 
 
 console.log(`The length of Longest repeating subsequence of aab ${longestRepeatingSubsequence("aab")}`);//a -> 1

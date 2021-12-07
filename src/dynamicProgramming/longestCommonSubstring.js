@@ -47,7 +47,7 @@ const longestCommonSubString = (text1, text2) => {
   let longestSubstring = '';
 
   while (dp[row][column] > 0) {
-    longestSubstring = text1[column - 1] + longestSubstring;
+    longestSubstring = text1[row - 1] + longestSubstring;
     row--;
     column--;
   }
