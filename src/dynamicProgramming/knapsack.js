@@ -20,7 +20,7 @@ solution: 220
 
 Complexity Analysis:
 
-Time Complexity: O(2n).
+Time Complexity: O(2^n).
 As there are redundant subproblems.
 Auxiliary Space :O(1).
 As no extra data structure has been used for storing values.
