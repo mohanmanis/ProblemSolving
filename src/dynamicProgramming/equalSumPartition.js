@@ -43,7 +43,7 @@ The problem can be solved using dynamic programming when the sum of the elements
             dp[i][j] = false;
          } else if (j === 0) {
             dp[i][j] = true;
-         } else if (set[i] <= j) {
+         } else if (set[i] < j) {
             dp[i][j] = dp[i - 1][j - set[i - 1]] || dp[i][j]
          } else {
             dp[i][j] = dp[i - 1][j]

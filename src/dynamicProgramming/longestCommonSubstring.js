@@ -56,10 +56,10 @@ const longestCommonSubString = (text1, text2) => {
 
 };
 
-
-console.log(`The Longest common Substring of abcdxyz and xyzabcd ${longestCommonSubString("abcdxyz", "xyzabcd")}`);
-
-console.log(`The Longest common Substring of zxabcdezy and yzabcdezx ${longestCommonSubString("zxabcdezy", "yzabcdezx")}`)
+let ans = longestCommonSubString("abcdxyz", "xyzabcd");
+console.log(`The Longest common Substring of abcdxyz and xyzabcd is ${ans[0]} with length ${ans[1]}`);
+ans = longestCommonSubString("zxabcdezy", "yzabcdezx");
+console.log(`The Longest common Substring of zxabcdezy and yzabcdezx is ${ans[0]} with length ${ans[1]}`)
 
 
 var findMaximizedCapital = function (k, w, profits, capital) {

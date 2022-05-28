@@ -14,7 +14,7 @@ A(BC) = (30×5×60) + (10×30×60) = 9000 + 18000 = 27000 operations.
 
 const mcmWithoutMemoization = (arr, i = 1, j = arr.length - 1) => {
  if (i >= j) return 0; // since if i==j means array has one element and one element is not enough to provide the dimension of matrix
- // we will break it into two parts i =1 to k and k + 1 to j -1;
+ // we will break it into two parts i =1 to k and k + 1 to j - 1;
  let min = Infinity;
 
  for (let k = i; k <= j - 1; k++) {
@@ -57,3 +57,32 @@ const mcmWithTabulation = (arr, i = 1, j = arr.length - 1) => {
 const arr = [1, 2, 3, 4, 3]
 console.log(`The minimum cost of mcm is :: ${mcmWithoutMemoization(arr)}`);
 console.log(`The minimum cost of mcm is :: ${mcmWithMemoization(arr)}`);
+
+
+
+/**
+ * @param {number[][]} matrix
+ * @return {number}
+ */
+var countSquares = function (matrix) {
+
+ const [m, n] = [matrix.length, matrix[0].length];
+ let count = 0;
+
+ for (let i = 0; i < m; i++) {
+  for (let j = 0; j < n; j++) {
+   if (i > 0 && j > 0 && matrix[i][j]) {
+    matrix[i][j] = Math.min(matrix[i - 1][j], matrix[i][j - 1], matrix[i - 1][j - 1]) + 1;
+   }
+   /*
+   matrix[i][j]: 
+   the maximum length of square ends at (i, j).
+   suppose the length of the square we find is l,
+   we can find out the square(of size 1 to 1) ends at (i, j) is just l!
+   */
+   count += matrix[i][j];
+  }
+ }
+ return count;
+
+};
