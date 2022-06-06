@@ -81,5 +81,31 @@ var findMaximizedCapital = function (k, w, profits, capital) {
 };
 
 
+function adsConversionRate(completedPurchaseUserIds, adClicks, allUserIps) {
+  const userIds = new Set(completedPurchaseUserIds);
+  const conversion = new Map();
+  const ipToUserId = new Map();
+
+  for (let [userId, ipAddress] of allUserIps) {
+    ipToUserId.set(ipAddress, userId);
+  }
+
+  for (let [ip, , adText] of adClicks) {
+    if (conversion.get(adText)) {
+      conversion.get(adText)[1]++;
+      if (userIds.has(ipToUserId.get(ip))) {
+        conversion.get(adText)[0]++;
+      }
+    } else {
+      const bought = userIds.has(ipToUserId.get(ip)) ? 1 : 0;
+      conversion.set(adText, [bought, 1]);
+    }
+  }
+  for (const [adText, ratio] of conversion) {
+    console.log(`${ratio[0]} of ${ratio[1]}  ${adText}`);
+  }
+}
+
+
 
 
