@@ -106,6 +106,3 @@ function adsConversionRate(completedPurchaseUserIds, adClicks, allUserIps) {
   }
 }
 
-
-
-

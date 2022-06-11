@@ -23,24 +23,24 @@ weight 5 and one unit of weight 3.
 */
 
 const unboundedKnapsack = (W, val, wt) => {
- // dp[i] is going to store maximum value
- // with knapsack capacity i.
- const n = val.length;
- const dp = new Array(W + 1).fill(0);
+  // dp[i] is going to store maximum value
+  // with knapsack capacity i.
+  const n = val.length;
+  const dp = new Array(W + 1).fill(0);
 
- // Fill dp[] using above recursive formula
- for (let i = 0; i <= W; i++) {
-  for (let j = 0; j < n; j++) {
-   if (wt[j] <= i) {
-    dp[i] = Math.max(dp[i], dp[i - wt[j]] + val[j]);
-   }
+  // Fill dp[] using above recursive formula
+  for (let i = 0; i <= W; i++) {
+    for (let j = 0; j < n; j++) {
+      if (wt[j] <= i) {
+        dp[i] = Math.max(dp[i], dp[i - wt[j]] + val[j]);
+      }
+    }
   }
- }
- return dp[W];
+  return dp[W];
 
 }
 
 const W = 100;
 const val = [10, 30, 20];
 const wt = [5, 10, 15];
-console.log(unboundedKnapsack(W, val, wt))
+console.log(unboundedKnapsack(W, val, wt));
