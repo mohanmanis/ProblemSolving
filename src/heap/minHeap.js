@@ -35,7 +35,7 @@ class MinHeap {
 
  pop() {
   const min = this.heap[0];
-  this.heap[0] = this.heap[this.size() - 1];
+  this.heap[0] = this.heap[this.size - 1];
   this.heap.pop();
   this.bubble_down();
   return min;
@@ -66,7 +66,7 @@ class MinHeap {
   return this.heap[0];
  }
 
- size() {
+ get size() {
   return this.heap.length;
  }
 }
