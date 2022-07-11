@@ -5,7 +5,7 @@ class HeapItem {
  }
 }
 
-class MinHeap {
+class MaxHeap {
  constructor() {
   this.heap = [];
  }
@@ -24,9 +24,8 @@ class MinHeap {
    const element = this.heap[index];
    const parentIndex = Math.floor((index - 1) / 2);
    const parent = this.heap[parentIndex];
-
-   if (parent.priority <= element.priority) break;
-   // if the parent is bigger than the child then swap the parent and child
+   if (parent.priority > element.priority) break;
+   // if the parent is smaller than the child then swap the parent and child
    this.heap[index] = parent;
    this.heap[parentIndex] = element;
    index = parentIndex;
@@ -34,31 +33,31 @@ class MinHeap {
  }
 
  pop() {
-  const min = this.heap[0];
-  this.heap[0] = this.heap[this.size - 1];
-  this.heap.pop();
-  this.bubble_down();
-  return min;
+  const max = this.heap[0];
+  this.heap[0] = this.heap[this.size - 1]; // keep the last element on the top of the heap
+  this.heap.pop(); // removed the last element
+  this.bubble_down(); // compare with the children and find the exact position of the parent
+  return max; // return the value at the top, which we have stored initially in max. 
  }
 
  bubble_down() {
   let index = 0;
-  let min = index;
+  let max = index;
   const n = this.heap.length;
 
   while (index < n) {
    const left = 2 * index + 1;
    const right = left + 1;
 
-   if (left < n && this.heap[left].priority < this.heap[min].priority) {
-    min = left;
+   if (left < n && this.heap[left].priority > this.heap[max].priority) {
+    max = left;
    }
-   if (right < n && this.heap[right].priority < this.heap[min].priority) {
-    min = right;
+   if (right < n && this.heap[right].priority > this.heap[max].priority) {
+    max = right;
    }
-   if (min === index) break;
-   [this.heap[min], this.heap[index]] = [this.heap[index], this.heap[min]];
-   index = min;
+   if (max === index) break;
+   [this.heap[max], this.heap[index]] = [this.heap[index], this.heap[max]];
+   index = max;
   }
  }
 
@@ -71,7 +70,7 @@ class MinHeap {
  }
 }
 
-const heap = new MinHeap();
+const heap = new MaxHeap();
 heap.push(new HeapItem(25))
 heap.push(new HeapItem(5))
 heap.push(new HeapItem(48))
