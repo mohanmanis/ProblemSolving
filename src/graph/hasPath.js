@@ -8,7 +8,12 @@ const graph = {
 }
 
 
+/* 
+  handled the bi-directed graph case in 
+  
+  https://leetcode.com/problems/find-if-path-exists-in-graph/
 
+*/
 
 
 const hasPathDFS = (graph, source, destination) => {
