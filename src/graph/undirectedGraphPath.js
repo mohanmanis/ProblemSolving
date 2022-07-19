@@ -35,4 +35,20 @@ const buildGraph = (edges) => {
   return graph;
 }
 
-console.log(undirectedGraphPath(edges, "j", "m")); 
+console.log(undirectedGraphPath(edges, "j", "m"));
+
+var generate = function (numRows) {
+  const triangle = [[1]];
+  for (let rowNum = 1; rowNum < numRows; rowNum++) {
+    let currentRow = [];
+    let previousRow = triangle[rowNum - 1];
+    currentRow.push(1)
+    for (let col = 1; col < previousRow.length; col++) {
+      currentRow.push(previousRow[col - 1] + previousRow[col]);
+    }
+    currentRow.push(1)
+    triangle.push(currentRow);
+  }
+
+  return triangle;
+};
