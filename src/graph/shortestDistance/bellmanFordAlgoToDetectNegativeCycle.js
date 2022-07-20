@@ -1,6 +1,7 @@
 /* 
 
 ****Bellman Ford Algorithm | Detect Negative Weight Cycle in Graphs****
+In a graph with N vertices, there are at most N - 1 edges b/w any two vertices
  it works for negative edges.
  1. Works for Directed graph
  2. It will not work for graph having a negative cycle. // it will go to infinite loop
