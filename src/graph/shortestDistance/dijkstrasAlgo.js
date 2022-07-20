@@ -1,3 +1,13 @@
+
+/* 
+
+ It does not work for negative edges.
+
+
+*/
+
+
+
 class HeapItem {
   constructor(item, priority = item) {
     this.item = item;
