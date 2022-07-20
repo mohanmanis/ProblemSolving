@@ -84,7 +84,6 @@ class MinHeap {
 
 const dijkstras = (graph, src) => {
   let n = graph.length;
-  console.log(graph)
   let distance = Array(n).fill(Infinity);
   distance[src] = 0;
   let priorityQueue = new MinHeap();
