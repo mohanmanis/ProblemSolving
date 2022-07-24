@@ -63,5 +63,3 @@ let bitArray = new BinaryIndexedTree(2e4 + 2);
 //   bitArray.update(nums[i] + delta, 1);
 // }
 // return counts;
-
-
