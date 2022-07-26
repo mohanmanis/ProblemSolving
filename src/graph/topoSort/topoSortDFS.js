@@ -1,6 +1,10 @@
 /* 
 
- Topological Sort : Linear ordering of the vertices such that if there is and edge u --> v, u appears before v in that ordering.
+ Topological Sort : Linear ordering of the vertices such that if there is a edge u --> v, u appears before v in that ordering.
+
+ A topological sort is a linear ordering of all vertices such that for any edge (u, v), u comes before v. Another way to describe it is that when you put all vertices horizontally on a line, all of the edges are pointing from left to right.
+
+
 {
   0: [],
   1: [],
