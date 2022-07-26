@@ -3,14 +3,12 @@
  */
 class Heap {
  constructor(comparator) {
-  this.size = 0;
   this.values = [];
   this.comparator = comparator || Heap.minComparator;
  }
 
- add(val) {
+ push(val) {
   this.values.push(val);
-  this.size++;
   this.bubbleUp();
  }
 
@@ -21,7 +19,6 @@ class Heap {
  poll() {
   const max = this.values[0];
   const end = this.values.pop();
-  this.size--;
   if (this.values.length) {
    this.values[0] = end;
    this.bubbleDown();
@@ -33,7 +30,7 @@ class Heap {
   let index = this.values.length - 1;
   let parent = Math.floor((index - 1) / 2);
 
-  while (this.comparator(this.values[index], this.values[parent]) < 0) {
+  while (index > 0 && this.comparator(this.values[index], this.values[parent]) < 0) {
    [this.values[parent], this.values[index]] = [this.values[index], this.values[parent]];
    index = parent;
    parent = Math.floor((index - 1) / 2);
@@ -43,7 +40,7 @@ class Heap {
  bubbleDown() {
   let index = 0, length = this.values.length;
 
-  while (true) {
+   while (index < length) {
    let left = null,
     right = null,
     swap = null,
@@ -67,6 +64,9 @@ class Heap {
    index = swap;
   }
  }
+  get size() {
+    return this.values.length
+  }
 }
 
 /** 
