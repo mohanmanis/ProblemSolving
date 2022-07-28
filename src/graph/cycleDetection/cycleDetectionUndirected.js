@@ -33,7 +33,7 @@ const checkForCycleDFS = (adj, src, visited, parent) => {
   const neighbors = adj[src];
   for (const neighbor of neighbors) {
     if (!visited.has(neighbor)) {
-      if (checkForCycle(adj, neighbor, visited, src))
+      if (checkForCycleDFS(adj, neighbor, visited, src))
         return true; 
     } else if (neighbor != parent)
       return true; 
