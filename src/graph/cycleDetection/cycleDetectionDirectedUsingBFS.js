@@ -24,7 +24,7 @@ const topologicalSort = (graph) => {
       queue.push(v)
     }
   }
-  let count = 0; // varible to track the number of nodes in the topo
+  let count = 0; // variable to track the number of nodes in the topo
   while (queue.length) {
     const node = queue.shift();
     count++;

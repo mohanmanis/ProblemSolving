@@ -123,7 +123,7 @@ var assignTasks = function (servers, tasks) {
 
 class PriorityQueue {
   constructor(compare) {
-    this.compare = compare; // compare function
+    this.compare = compare || ((a, b) => a - b); // compare function
     this.heap = [];
   }
 

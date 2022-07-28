@@ -262,3 +262,36 @@ MyCalendar.prototype.bookUsingBS = function (start1, end1) {
 }
 
 
+var cleanRoom = function (robot) {
+  const visited = new Set();
+
+  const goBack = () => {
+    robot.turnRight();
+    robot.turnRight();
+    robot.move();
+    robot.turnRight();
+    robot.turnRight();
+  }
+  const backTracking = (row, col, direction) => {
+    visited.add(`${row}${col}`);
+    robot.clean();
+    let [dr, dc] = [0, 1];
+
+    for (let i = 0; i < 4; i++) {
+      const newDirection = (direction + i) % 4;
+      let newRow = dr + row;
+      let newCol = dc + col;
+      [dr, dc] = [dc, -dr];
+      if (!visited.has(`${newRow}${newCol}`) && robot.move()) {
+        backTracking(newRow, newCol, newDirection);
+        goback();
+      }
+      // turn the robot following chosen direction : clockwise
+      robot.turnRight();
+    }
+  }
+  backTracking(0, 0, 0);
+};
+
+
+
